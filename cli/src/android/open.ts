@@ -23,7 +23,7 @@ export async function openAndroid(config: Config) {
       if (config.windows.androidStudioPath) {
         opn(dir, { app: config.windows.androidStudioPath, wait: false });
       } else {
-        logError('Unable to launch Android Studio. Make sure the latest version of Android Studio is installed')
+        logError('Unable to launch Android Studio. Make sure the latest version of Android Studio is installed');
       }
       break;
     case OS.Linux:
@@ -38,7 +38,7 @@ export async function openAndroid(config: Config) {
       };
 
       try {
-        await opn(dir, { app: config.linux.androidStudioPath, wait: false });
+        await opn(dir, { app: config.linux.androidStudioPath, wait: true });
       } catch (e) {
         linuxError();
       }
